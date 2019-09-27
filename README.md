@@ -3,6 +3,15 @@ Prometheus exporter for the metrics available in Logstash since version 7.0.
 
 ## Usage
 
+### Install
+
+Using docker
+```bash
+docker pull wing924/logstash-exporter
+docker run wing924/logstash-exporter
+```
+
+Build from source
 ```bash
 git clone https://github.com/Wing924/logstash-exporter
 cd logstash-exporter
