@@ -11,6 +11,7 @@ type NodeStats struct {
 	Status      string `json:"status"`
 
 	Pipeline  PipelineConfig      `json:"pipeline"`
+	Reloads   ReloadsConfig       `json:"reloads"`
 	JVM       JVM                 `json:"jvm"`
 	Process   Process             `json:"process"`
 	Event     Event               `json:"events"`
@@ -21,6 +22,11 @@ type PipelineConfig struct {
 	Workers    int `json:"workers"`
 	BatchSize  int `json:"batch_size"`
 	BatchDelay int `json:"batch_delay"`
+}
+
+type ReloadsConfig struct {
+	Failures  int `json:"failures"`
+	Successes int `json:"successes"`
 }
 
 type Process struct {

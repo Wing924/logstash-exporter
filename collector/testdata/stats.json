@@ -240,8 +240,8 @@
     }
   },
   "reloads": {
-    "failures": 0,
-    "successes": 0
+    "failures": 1,
+    "successes": 3
   },
   "os": {
     "cgroup": {

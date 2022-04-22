@@ -38,6 +38,7 @@ type Collector struct {
 	jvm            *jvmCollector
 	process        *processCollector
 	pipelineConfig *pipelineConfigCollector
+	reloadsConfig  *reloadsConfigCollector
 	event          *eventCollector
 	pipeline       *pipelinesCollector
 }
@@ -87,6 +88,7 @@ func NewCollector(uri string, timeout time.Duration) (*Collector, error) {
 		jvm:            newJVMCollector(),
 		process:        newProcessCollector(),
 		pipelineConfig: newPipelineConfigCollector(),
+		reloadsConfig:  newReloadsConfigCollector(),
 		event:          newEventCollector(),
 		pipeline:       newPipelinesCollector(),
 	}, nil
@@ -142,6 +144,7 @@ func (c *Collector) scrape(ch chan<- prometheus.Metric) (up float64) {
 	c.jvm.Collect(stats.JVM, ch)
 	c.process.Collect(stats.Process, ch)
 	c.pipelineConfig.Collect(stats.Pipeline, ch)
+	c.reloadsConfig.Collect(stats.Reloads, ch)
 	c.event.Collect(stats.Event, ch)
 	c.pipeline.Collect(stats.Pipelines, ch)
 
