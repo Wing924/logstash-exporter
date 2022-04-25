@@ -88,4 +88,6 @@ Flags:
   * `logstash_process_process_time_seconds` Was the total process time.
   * `logstash_process_total_virtual_memory_bytes` Was the used virtual memory.
   * `logstash_status` Was the logstash status: 0 for Green; 1 for Yellow; 2 for Red.
-  
+* reloads metrics
+  * `logstash_reloads_config_failures_total` Number of failures during config reload
+  * `logstash_reloads_config_successes_total` Number of successful config reloads
